@@ -72,7 +72,7 @@ export default function Assessment({ data, updateData }: AssessmentProps) {
 
             {/* Real-time sentence preview could go here if desired */}
             <div className="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-400 italic">
-                "당신의 목표는
+                &quot;당신의 목표는
                 <span className="font-semibold text-slate-900 dark:text-slate-200 not-italic"> {grasps.goal || "..."} </span>
                 하는 것입니다. 당신은
                 <span className="font-semibold text-slate-900 dark:text-slate-200 not-italic"> {grasps.role || "..."} </span>
@@ -83,7 +83,7 @@ export default function Assessment({ data, updateData }: AssessmentProps) {
                 당신은
                 <span className="font-semibold text-slate-900 dark:text-slate-200 not-italic"> {grasps.product || "..."} </span>(을/를) 만들어야 하며,
                 평가 기준은
-                <span className="font-semibold text-slate-900 dark:text-slate-200 not-italic"> {grasps.standards || "..."}</span>입니다."
+                <span className="font-semibold text-slate-900 dark:text-slate-200 not-italic"> {grasps.standards || "..."}</span>입니다.&quot;
             </div>
         </div>
     );

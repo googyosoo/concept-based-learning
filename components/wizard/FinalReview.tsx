@@ -190,7 +190,7 @@ export default function FinalReview({ data }: FinalReviewProps) {
                         <div className="p-8 bg-gradient-to-r from-slate-50 to-white border-l-4 border-indigo-500 rounded-r-lg shadow-sm">
                             <span className="block text-xs text-slate-500 uppercase tracking-widest mb-3 font-semibold">일반화 (Generalization Statement)</span>
                             <p className="text-xl font-serif italic text-slate-800 leading-relaxed">
-                                "학생들은 <strong className="text-indigo-700 bg-indigo-50 px-1">{data.conceptualLens}</strong>(을/를) 통해 <strong className="text-indigo-700 bg-indigo-50 px-1">{data.macroConcept}</strong>(와/과) <strong className="text-blue-700 bg-blue-50 px-1">{data.microConcept}</strong>(이)가 상호작용함을 이해한다."
+                                &quot;학생들은 <strong className="text-indigo-700 bg-indigo-50 px-1">{data.conceptualLens}</strong>(을/를) 통해 <strong className="text-indigo-700 bg-indigo-50 px-1">{data.macroConcept}</strong>(와/과) <strong className="text-blue-700 bg-blue-50 px-1">{data.microConcept}</strong>(이)가 상호작용함을 이해한다.&quot;
                             </p>
                         </div>
                     </section>

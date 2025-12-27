@@ -64,7 +64,7 @@ export default function ProgressSummary({ data, currentStep }: ProgressSummaryPr
                         )}
                         {data.generalization && (
                             <div className="mt-2 p-2 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-600 dark:text-slate-400 italic">
-                                "{data.generalization}"
+                                &quot;{data.generalization}&quot;
                             </div>
                         )}
                     </div>
@@ -111,7 +111,7 @@ export default function ProgressSummary({ data, currentStep }: ProgressSummaryPr
     );
 }
 
-function SummaryItem({ icon: Icon, label, children, isActive, isCompleted }: any) {
+function SummaryItem({ icon: Icon, label, children, isActive, isCompleted }: { icon: any, label: string, children: React.ReactNode, isActive: boolean, isCompleted: boolean }) {
     return (
         <div className={cn(
             "relative pl-4 transition-all duration-300",
@@ -137,7 +137,7 @@ function SummaryItem({ icon: Icon, label, children, isActive, isCompleted }: any
     );
 }
 
-function Badge({ count = 0, color, label }: any) {
+function Badge({ count = 0, color, label }: { count?: number, color: string, label: string }) {
     if (count === 0) return null;
     return (
         <span className={cn("px-2 py-1 rounded-md font-medium", color)}>

@@ -1,0 +1,1 @@
+﻿components/wizard/CurriculumSelect.tsx(132,67): error TS2367: This comparison appears to be unintentional because the types '"general" | "career" | "fusion" | undefined' and '"middle_school"' have no overlap.

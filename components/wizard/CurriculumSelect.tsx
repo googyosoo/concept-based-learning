@@ -129,7 +129,7 @@ export default function CurriculumSelect({ data, updateData }: CurriculumSelectP
                                     )}
                                 >
                                     {sub.name}
-                                    {sub.category !== 'common' && sub.category !== 'middle_school' && (
+                                    {sub.category && sub.category !== 'common' && (
                                         <span className="block text-[10px] opacity-60 font-normal mt-0.5 capitalize">
                                             {sub.category}
                                         </span>

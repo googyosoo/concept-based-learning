@@ -1,0 +1,47 @@
+﻿
+> temp-app@0.1.0 lint
+> eslint
+
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\app\page.tsx
+  3:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\components\wizard\Assessment.tsx
+   4:10   warning  'cn' is defined but never used                                   @typescript-eslint/no-unused-vars
+  75:17   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  86:134  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\components\wizard\ConceptDesign.tsx
+    4:10  warning  'Badge' is defined but never used                                @typescript-eslint/no-unused-vars
+    4:25  warning  'Card' is defined but never used                                 @typescript-eslint/no-unused-vars
+   20:7   warning  'MACRO_CONCEPTS_EXAMPLES' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  174:41  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  174:75  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\components\wizard\CurriculumSelect.tsx
+  3:10  warning  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+  9:10  warning  'motion' is defined but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\components\wizard\FinalReview.tsx
+    5:10   warning  'Printer' is defined but never used                              @typescript-eslint/no-unused-vars
+    5:29   warning  'Share2' is defined but never used                               @typescript-eslint/no-unused-vars
+   86:18   warning  'error' is defined but never used                                @typescript-eslint/no-unused-vars
+  193:33   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  193:315  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\components\wizard\ProgressSummary.tsx
+   67:33  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   67:55  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  114:78  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  140:45  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\debug_pdf.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:13  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\1\Desktop\Antigravity Test\concept-based learning\extract_pdf.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:13  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+??24 problems (14 errors, 10 warnings)
+

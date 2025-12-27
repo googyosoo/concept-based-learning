@@ -171,7 +171,7 @@ export default function ConceptDesign({ data, updateData }: ConceptDesignProps) 
                                     <li>Macro: <span className="text-indigo-600">갈등</span></li>
                                     <li>Micro: <span className="text-blue-600">비극</span></li>
                                     <li className="italic text-xs mt-2 text-slate-500">
-                                        "서로 다른 관점의 갈등이 어떻게 비극을 초래하는지 이해한다."
+                                        &quot;서로 다른 관점의 갈등이 어떻게 비극을 초래하는지 이해한다.&quot;
                                     </li>
                                 </ul>
                             </div>
