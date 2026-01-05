@@ -4,7 +4,7 @@ import { DesignState } from "@/app/design/types";
 import { Button, Badge, Card } from "@/components/ui/minimal";
 import { Download, Mail, Loader2, X } from "lucide-react";
 import { useRef, useState } from "react";
-import html2canvas from "html2canvas";
+
 import jsPDF from "jspdf";
 
 interface FinalReviewProps {
@@ -23,39 +23,39 @@ export default function FinalReview({ data }: FinalReviewProps) {
 
         try {
             console.log("Starting PDF generation...");
-            const canvas = await html2canvas(contentRef.current, {
-                scale: 2, // Higher quality
-                useCORS: true,
-                logging: true, // Enable logging for debug
+
+            // Using html-to-image which supports modern CSS (Tailwind v4 lab/oklch colors)
+            // It uses the browser's own rendering via SVG foreignObject
+            const { toJpeg } = await import('html-to-image');
+
+            const dataUrl = await toJpeg(contentRef.current, {
+                quality: 0.95,
                 backgroundColor: "#ffffff",
-                windowWidth: contentRef.current.scrollWidth,
-                windowHeight: contentRef.current.scrollHeight
             });
 
-            console.log("Canvas generated", canvas.width, canvas.height);
-
-            const imgData = canvas.toDataURL("image/jpeg", 0.95); // Use JPEG for better compression/reliability
             const pdf = new jsPDF({
                 orientation: "portrait",
                 unit: "mm",
                 format: "a4",
             });
 
-            const imgWidth = 210; // A4 width in mm
-            const pageHeight = 297; // A4 height in mm
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-            let heightLeft = imgHeight;
+            const imgProps = pdf.getImageProperties(dataUrl);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            let heightLeft = pdfHeight;
             let position = 0;
 
-            console.log("Adding image to PDF", imgWidth, imgHeight);
+            console.log("Adding image to PDF", pdfWidth, pdfHeight);
 
-            pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+            pdf.addImage(dataUrl, "JPEG", 0, position, pdfWidth, pdfHeight);
             heightLeft -= pageHeight;
 
             while (heightLeft >= 0) {
-                position = heightLeft - imgHeight;
+                position = heightLeft - pdfHeight;
                 pdf.addPage();
-                pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+                pdf.addImage(dataUrl, "JPEG", 0, position, pdfWidth, pdfHeight);
                 heightLeft -= pageHeight;
             }
 
