@@ -2,7 +2,7 @@
 
 import { DesignState } from "@/app/design/types";
 import { Button, Badge, Card } from "@/components/ui/minimal";
-import { Printer, Download, Share2, Mail, Loader2, X } from "lucide-react";
+import { Download, Mail, Loader2, X } from "lucide-react";
 import { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -27,7 +27,6 @@ export default function FinalReview({ data }: FinalReviewProps) {
                 scale: 2, // Higher quality
                 useCORS: true,
                 logging: true, // Enable logging for debug
-                allowTaint: true,
                 backgroundColor: "#ffffff",
                 windowWidth: contentRef.current.scrollWidth,
                 windowHeight: contentRef.current.scrollHeight
@@ -83,7 +82,7 @@ export default function FinalReview({ data }: FinalReviewProps) {
                 link.click();
                 window.URL.revokeObjectURL(url);
             }
-        } catch (error) {
+        } catch {
             alert("PDF 생성 중 오류가 발생했습니다.");
         } finally {
             setIsExporting(false);
