@@ -72,6 +72,9 @@ export default function FinalReview({ data }: FinalReviewProps) {
         if (!contentRef.current) return;
         setIsExporting(true);
 
+        // Yield to main thread to allow UI to update (show spinner)
+        await new Promise(resolve => setTimeout(resolve, 100));
+
         try {
             const blob = await generatePdfBlob();
             if (blob) {
@@ -92,6 +95,9 @@ export default function FinalReview({ data }: FinalReviewProps) {
     const handleEmailSend = async () => {
         if (!email) return;
         setIsSending(true);
+
+        // Yield to main thread to allow UI to update (show spinner)
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         try {
             const blob = await generatePdfBlob();
